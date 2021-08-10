@@ -1,0 +1,51 @@
+{% extends "layout.html" %}
+
+{% block css %}    
+    <link rel="stylesheet" href="{{ url_for('core_bp.static', filename='css/ml_papers.css') }}">
+{% endblock css %}
+
+{% block body %}
+<div class="portfolio_section">
+    <div class="page_label">
+        <h2>Research Paper Implementations</h2>
+        <p>This is a blurb about the papers that I have read and implemented. This would contain a description of papers that I like and that I like to implement.</p>    
+    </div>
+</div>
+
+<div class="portfolio_section">
+    <div class="ml_paper_grid">
+        <div class="ml_paper">
+            <div class="date_published">Date Posted: 15/12/2015</div>
+            <div class="authors">Authors: Gunnar Friede, Timo Busch, Alexander Bassen</div>
+            <div class="paper_category">ESG Investment Performance</div>
+            <h5>ESG and financial performance: aggregated evidence from more than 2000 empirical studies</h5>
+            <div class="button_div"><a class="button_link" href="">Read Review</a></div>
+        </div>
+        
+        <div class="ml_paper">
+            <div class="date_published">Date Posted: 15/12/2015</div>
+            <div class="authors">Authors: Gunnar Friede, Timo Busch, Alexander Bassen</div>
+            <div class="paper_category">ESG Investment Performance</div>
+            <h5>The Applications of Graph Theory to Investing</h5>
+            <div class="button_div"><a class="button_link" href="">Read Review</a></div>
+        </div>
+        
+        <div class="ml_paper">
+            <div class="date_published">Date Posted: 15/12/2015</div>
+            <div class="authors">Authors: Gunnar Friede, Timo Busch, Alexander Bassen</div>
+            <div class="paper_category">ESG Investment Performance</div>
+            <h5>Predicting stock and stock price index movement using Trend Deterministic Data Preparation and machine learning techniques</h5>            
+            <div class="button_div"><a class="button_link" href="">Read Review</a></div>
+        </div>
+        
+        <div class="ml_paper">
+            <div class="date_published">Date Posted: 15/12/2015</div>
+            <div class="authors">Authors: Gunnar Friede, Timo Busch, Alexander Bassen</div>
+            <div class="paper_category">ESG Investment Performance</div>
+            <h5>A Random Forests Approach to Predicting Clean Energy</h5>
+            <div class="button_div"><a class="button_link" href="">Read Review</a></div>
+        </div>        
+    </div>
+</div>
+{% endblock body %}
+

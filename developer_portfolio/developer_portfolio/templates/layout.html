@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+
+  <head>
+    <title>{% block title %}{% endblock title %}</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='core_styling.css') }}">
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    {% block css %}{% endblock %}
+  </head>
+
+  <body>
+    {% block navbar %}
+    <div class="header-card">
+            <a href="{{ url_for('core_bp.portfolio_home') }}">Portfolio</a>
+            <a href="/">Software Projects</a>
+            <a href="/">ESG Papers</a>
+    </div> 
+    {% endblock navbar %}
+
+    <div class="main-body-content">
+      {% block body %}
+      {% endblock body %}
+    </div>
+  
+      {% block javascript %}
+      {% endblock javascript %}
+  </body>
+
+</html>

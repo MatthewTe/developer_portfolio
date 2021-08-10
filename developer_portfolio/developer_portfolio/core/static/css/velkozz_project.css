@@ -1,0 +1,26 @@
+/* Styling the main velkozz project container. */
+.http_styling_body{
+    width: 70%;
+    margin: 0 auto;
+    line-height: 30px;
+}
+
+/* Text Styling */
+.json_key_style{
+    color:lightgoldenrodyellow;
+}
+.json_value_style{
+    color: lightgreen;
+}
+.json_link_style{
+    color: royalblue;
+}
+
+/* Removing the link highlighting */
+a:link {
+    text-decoration: none;
+}
+  
+a:visited {
+    text-decoration: none;
+}
