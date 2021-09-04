@@ -2,6 +2,14 @@
 from flask import Blueprint, render_template
 from flask import current_app as app
 
+# Importing Notion API methods:
+import notion
+from notion.client import NotionClient
+
+# Importing 3rd party packages: 
+from datetime import datetime
+import os
+
 # Blueprink Configuration:
 core_bp = Blueprint(
     "core_bp", __name__,
@@ -10,14 +18,49 @@ core_bp = Blueprint(
     static_url_path="/static/core"
 )
 
+# Utility function that queries Notion API:
+def get_reviews(media_type, media_category):
+    # Creating conneciton to Notion Client and specific article page:
+    client = NotionClient(token_v2=os.environ["TOKEN_V2"])
+    readings_page = client.get_block(os.environ["PAGE_URL"])
+    
+    
+    # Extracting the main table block. This table is named 'readings':
+    for child in readings_page.children:
+        if child.title == "Readings":
+            
+            # Extracting the readings table as a collection object:
+            collection = client.get_collection(child.collection.id)
+            reading_tbl = collection.get_rows()
+            
+            # Only extracting reviews that have been marked as 'finished' that are correct review type:
+            reviews = [] # Empty lst to be populated w reviews then turned into JSON object
+            for row in reading_tbl:
+                if row.status == "Finished" and row.Type == media_type and row.Category == media_category:
+                    
+                    # Seralizing this information into JSON objects:
+                    review = {
+                        "Name":row.Name,
+                        "Type":row.Type,
+                        "Author":", ".join(row.Author),
+                        "Category":row.Sub_Category,
+                        "Publisher":row.Publisher,
+                        "Published": row.Publishing_Release_Date.start.strftime("%m/%d/%Y"),
+                        "Full_Page":row.Review_Url,
+                        "link":row.link,
+                    }
+
+                    reviews.append(review)
+        
+            return reviews
+
 @core_bp.route("/", methods=["GET"])
 def portfolio_home():
     """
     View that renders the front end of the portfolio's homepage.
     """
     return render_template("home.html")
-
-
+    
 @core_bp.route("/velkozz_project", methods=["GET"])
 def velkozz_project():
     """
@@ -25,9 +68,29 @@ def velkozz_project():
     """
     return render_template("velkozz_project.html")
 
+@core_bp.route("/esg_papers", methods=["GET"])
+def esg_papers():
+    """
+    The View that renders the front-end for all ESG Research Papers.
+    """
+    esg_papers = get_reviews("Academic Journal", "ESG_Papers")
+
+    return render_template("esg_papers.html", esg_papers=esg_papers)
+
+@core_bp.route("/policy_papers", methods=["GET"])
+def policy_papers():
+    """
+    The View that renders the front-end for all Policy Research Papers.
+    """
+    policy_papers = get_reviews("Academic Journal", "Policy_Papers")
+
+    return render_template("policy_papers.html", policy_papers=policy_papers)
+
 @core_bp.route("/ml_paper_implementations", methods=["GET"])
 def ml_implementations():
     """
     The View that renders the front-end for all Machine Learning research paper implementations.
     """
-    return render_template("ml_papers.html")
+    ml_papers = get_reviews("Academic Journal", "ML_Papers")
+
+    return render_template("ml_papers.html", ml_papers=ml_papers)

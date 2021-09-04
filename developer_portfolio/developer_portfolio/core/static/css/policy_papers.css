@@ -5,6 +5,10 @@ div.portfolio_section {
     padding-bottom: 20px;
 }
 
+.page_label{
+    text-align: center;
+}
+
 /* Styling the introductory slide grid element */
 #profile_label {
     display: grid;
@@ -95,7 +99,7 @@ div.portfolio_section {
     margin-top: auto;
 }
 .button_div a {
-    background: #07a15e;
+    background: #a10742;
     border-radius: 3px;
     vertical-align: bottom;
     display: inline-flex;
