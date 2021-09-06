@@ -2,11 +2,10 @@
 div.portfolio_section {
     justify-content: center;
     border-bottom: 2px dashed #2a2e35;
-    padding-bottom: 30px;
-    padding-top: 30px;
+    padding-bottom: 20px;
 }
 
-.portfolio_section h2{
+.page_label{
     text-align: center;
 }
 
@@ -54,8 +53,6 @@ div.portfolio_section {
     display: grid;
     gap: 1rem;
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    padding-top: 30px;
-    padding-bottom: 30px;
 }
 
 .software_project{
