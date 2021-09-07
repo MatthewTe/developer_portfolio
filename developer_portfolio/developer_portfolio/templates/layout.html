@@ -4,7 +4,7 @@
   <head>
     <title>{% block title %}{% endblock title %}</title>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="{{ url_for('static', filename='core_styling.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/core_styling.css') }}">
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
     {% block css %}{% endblock %}
   </head>
@@ -12,9 +12,11 @@
   <body>
     {% block navbar %}
     <div class="header-card">
-            <a href="{{ url_for('core_bp.portfolio_home') }}">Portfolio</a>
-            <a href="/">Software Projects</a>
-            <a href="/">Research Papers</a>
+            <div><a href="{{ url_for('core_bp.portfolio_home') }}">Portfolio</a></div>
+            <div><a href="/">Software Projects</a></div>
+            <div><a href="/">Written Reviews</a></div>
+            <div><a href="/">Site Documentation</a></div>
+            <div style="padding-top:10px;"><a class="right-icons" href="https://github.com/MatthewTe"><img src="{{ url_for('static', filename='img/favicon-dark-github.svg') }}" alt=""></a></div>
     </div> 
     {% endblock navbar %}
 
@@ -22,9 +24,9 @@
       {% block body %}
       {% endblock body %}
     </div>
-  
-      {% block javascript %}
-      {% endblock javascript %}
+
+    {% block javascript %}
+    {% endblock javascript %}
   </body>
 
 </html>

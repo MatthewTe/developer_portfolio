@@ -123,4 +123,4 @@ def book_reviews():
     """
     book_reviews = get_reviews("Book")
 
-    return render_template("book_reviews.html")
+    return render_template("book_reviews.html", book_reviews=book_reviews)

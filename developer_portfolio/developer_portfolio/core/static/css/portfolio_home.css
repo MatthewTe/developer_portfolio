@@ -10,6 +10,22 @@ div.portfolio_section {
     text-align: center;
 }
 
+.portfolio_section ul {
+    line-height: 1.25em;
+}
+
+#portfolio-sub-header {
+    text-align: center;
+    padding-top: 1em;
+}
+
+#header-label{
+    text-align: justify;
+    line-height: 1.25em;
+    padding-left: 1em;
+    padding-right: 1em; 
+}
+
 /* Styling the introductory slide grid element */
 #profile_label {
     display: grid;
