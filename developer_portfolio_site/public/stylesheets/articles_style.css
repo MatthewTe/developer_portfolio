@@ -1,0 +1,147 @@
+/* Styling the main article homepage div  */
+.articles_body{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    position: sticky;
+    z-index: 2;
+}
+
+/* Styling the main article content */
+.article_content{
+    box-sizing: border-box;
+    max-width: 100%;
+    min-width: 0px;
+    width: 900px;
+}
+
+.articles_body h1.article_page_title{
+    font-size: 3.0em;
+    border-top-color: #111;
+    border-top-width: 1px;
+    border-top-style: solid;
+    line-height: .94737;
+    font-weight: 700;
+    text-align: left;
+}
+
+/* Styling each article thumbnail/description div containers */
+.article_element{
+    display: flex;
+    margin-bottom: 50px;
+    color: black;
+    outline-color: inherit;
+    text-decoration: none;
+}
+.article{
+    display: flex;
+    width: 100%;
+}
+
+/* Styling Article Thumbnail (image layering) */
+.article_thumbnail{
+    width: 50%;
+    margin-right: 20px;
+    margin-bottom: 0;
+}
+.article_thumbnail .image_layer1{
+    background: rgba(0, 0, 0, 0.05);
+    height: 0;
+    position: relative;
+    padding-bottom: 50%;
+}
+.article_thumbnail .image_layer2{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    line-height: 0;
+}
+.article_thumbnail .image_layer3{
+    display: block;
+    position: relative;
+    overflow: hidden;
+    max-width: 100%;
+}
+.article_thumbnail .image_layer4{
+    height: 0;
+    width: 100%;
+    padding-bottom: 50%;
+}
+.article_thumbnail picture{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+.article_thumbnail picture.thumbnail_frame{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+picture.thumbnail_frame img{
+    display: inherit;
+    width: 100%;
+}
+
+/* Styling Text description of articles: */
+.article_description{
+    display: flex;
+    width: 50%;
+    margin-left: 20px;
+}
+.article_description .article_description_title{
+    width: 50%;
+    margin-right: 20px;
+}
+.article_description .article_description_title h4{
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+    font-weight: 700;
+    line-height: 1.1;
+    font-style: normal;
+    margin: 0 0 .5em;
+}
+.article_description_title .byline1{
+    color: #888;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13px;
+    box-sizing: border-box;
+    padding-top: 5px;
+}
+.byline1 .author{
+    color: #6653ff;
+}
+.article_description_title .byline2{
+    padding-top: 10px;
+    color: #888;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13px;
+    box-sizing: border-box;
+}
+
+.byline2 .categories span{
+    padding-right: 5px;
+}
+
+/* Styling the furthest right article summary text block: */
+.article_summary{
+    width: 50%;
+    margin: 0 0 0 20px;
+    line-height: 1.5;
+    color: #888;
+}
+.article_summary p.summary_paragraph{
+    margin: 0;
+    width: 100%;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 13px;
+    letter-spacing: .01em;
+    line-height: 1.5;
+}

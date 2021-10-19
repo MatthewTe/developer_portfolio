@@ -1,0 +1,24 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    block css
+  body
+    block header
+      div.header
+        div.wide-wrapper
+          a.homepage_tab(href="/") Entropy
+          nav
+            ul
+              li
+                a(href="/") Test
+              li
+                a(href="/") Test 2
+              li
+                a(href="/") Test 3
+              li
+                a(href="/") Test 4 
+
+
+    block content
