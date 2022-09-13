@@ -140,7 +140,7 @@ def layout():
             html.P("Here you can read all of my writings on particular topics and all of the papers I wrote in university that I am not extremely ashamed of. There are serious articles/essays on topics that interest me as well as more informal stuff about interests of mine. There is documentation about how I built the backend of this blog page in my projects section.",
             style={"padding-top":"0.5rem"})
         ])
-    ], href="/", style={"text-decoration":"none", "color":"inherit"})
+    ], href="http://www.matthewteelucksingh.me:81/", style={"text-decoration":"none", "color":"inherit"})
 
     projects_component = html.A([
         dbc.Container([
