@@ -11,11 +11,11 @@ app = dash.Dash(
     external_stylesheets=[dbc.themes.CYBORG],
     external_scripts=["https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js"],
     suppress_callback_exceptions = True,
-    #requests_pathname_prefix="/",
-    requests_pathname_prefix="/dev/"
+    requests_pathname_prefix="/",
+    #requests_pathname_prefix="/dev/"
     #url_base_pathname="/dev/"
 )
-server = app.server
+#server = app.server
 
 app.layout = dbc.Container([
     dbc.Nav([
@@ -26,5 +26,5 @@ app.layout = dbc.Container([
 ])
 
 
-#if __name__ == "__main__":
-#    app.run_server(host="0.0.0.0", port=8000, debug=True)
+if __name__ == "__main__":
+    app.run_server(host="0.0.0.0", port=8000, debug=True)
